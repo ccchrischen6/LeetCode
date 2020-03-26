@@ -26,9 +26,5 @@ public class L55_dynamic_programming_bottomUp {
         return memo[0] == Index.GOOD;
     }
 
-    public static void main(String[] args) {
-        int[] nums = new int[]{2, 3, 1, 1, 4};
-        System.out.println(canJump(nums));
-    }
 }
 

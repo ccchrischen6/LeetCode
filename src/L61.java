@@ -28,10 +28,5 @@ public class L61 {
         return rs;
     }
 
-    public static void main(String[] args) {
-        ListNode l = new ListNode(0);
-        l.next = new ListNode(1);
-        l.next.next = new ListNode(2);
-        System.out.println(rotateRight(l, 4));
-    }
+
 }

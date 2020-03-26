@@ -17,10 +17,4 @@ public class L38 {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        for(int i=1; i<=30; i++){
-            System.out.println("the " + i + "th is " + countAndSay(i));
-        }
-
-    }
 }

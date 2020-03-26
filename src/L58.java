@@ -8,8 +8,4 @@ public class L58 {
         }
         return n;
     }
-
-    public static void main(String[] args) {
-        System.out.println(lengthOfLastWord("a fdsf  "));
-    }
 }

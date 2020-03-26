@@ -23,9 +23,4 @@ public class L41 {
         return nums.length +1;
 
     }
-
-    public static void main(String[] args) {
-        int[] A = new int[]{1, 1};
-        System.out.println(firstMissingPositive(A));
-    }
 }

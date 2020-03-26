@@ -28,4 +28,14 @@ public class L98 {
 //        if (root.val >= maxVal || root.val <= minVal) return false;
 //        return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
 //    }
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }
