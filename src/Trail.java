@@ -1,86 +1,77 @@
-import jdk.swing.interop.SwingInterOpUtils;
-
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.nio.file.Files;
 import java.util.*;
 
 public class Trail {
-    public static int calculate(String s) {
-        int sum = 0;
-        int tempSum = 0;
-        int num = 0;
-        char lastSign = '+';
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (Character.isDigit(c)) num = num * 10 + c - '0';
-            if (i == s.length() - 1 || !Character.isDigit(c) && c!=' ') {
-                switch(lastSign) {
-                    case '+':
-                        sum+=tempSum;
-                        tempSum = num;
-                        break;
-                    case '-':
-                        sum+=tempSum;
-                        tempSum = -num;
-                        break;
-                    case '*':
-                        tempSum *= num;
-                        break;
-                    case '/':
-                        tempSum /= num;
-                        break;
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList();
+        while (root != null) {
+            res.add(root.val);
+            //case 1
+            if (root.left == null) {
+                root = root.right;
+            }
+            //case 2
+            else {
+                TreeNode pre = root.left;
+                while (pre.right != null && pre.right != root) {
+                    pre = pre.right;
                 }
-                lastSign = c;
-                num=0;
+                //case 2.1
+                if (pre.right == null) {
+                    pre.right = root;
+                    root = root.left;
+                }
+                //case 2.2
+                else{
+                    pre.right = null;
+                    root = root.right;
+                }
             }
         }
-        sum+=tempSum;
-        return sum;
+        return res;
     }
-
-
-
 
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(3);
-        ListNode n2 = new ListNode(1);
-        ListNode n3 = new ListNode(2);
-        ListNode n4 = new ListNode(5);
-        ListNode n5 = new ListNode(5);
-        ListNode n6 = new ListNode(6);
-        ListNode n7 = new ListNode(7);
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
+        Trail trail = new Trail();
+        TreeNode t1 = new TreeNode(1);
+        t1.right = new TreeNode(2);
+        t1.right.left = new TreeNode(3);
+        LinkedList<Integer> stack = new LinkedList<>();
+        stack.offer(1);
+        stack.offer(2);
+        stack.push(3);
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(null);
+        System.out.println(stack.toString());
 
-//        LinkedList<String> linkedList = new LinkedList<>();
-//        linkedList.add("a");
-//        linkedList.addFirst("b");
-//
-//        System.out.println(linkedList);
-//        linkedList.add(2,"C");
-//        System.out.println(linkedList);
-//        linkedList.offer("L");
-//        System.out.println(linkedList);
-//        linkedList.push("A");
-//        System.out.println(linkedList);
-//        System.out.println(linkedList.get(0));
-//
-//        Stack<Integer> stack = new Stack<>();
-//        List<Integer> queue = new ArrayList<Integer>();
-//        Queue<Integer> q = new LinkedList<>();
-//
-//        Deque<Integer> dq = new LinkedList<>();
-//        queue.add(3); //offer
-//        queue.remove(0); //poll
-//
-//        Math.pow(1,2);
 
-        System.out.println(calculate("1+2*3"));
 
     }
-
-
 }
+
+/*
+ *   ctrl + shift + /    多行注释
+ *   cmd + d             复制当前行到下一行
+ *   cmd + d             删除当前行
+ *
+ *
+ * */
