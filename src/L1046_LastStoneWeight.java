@@ -19,7 +19,7 @@ public class L1046_LastStoneWeight {
 
         return stones[len-1];
     }
-    
+
     //pq
 //    public int lastStoneWeight(int[] stones) {
 //        PriorityQueue<Integer> q = new PriorityQueue<>((a,b) -> b-a);
