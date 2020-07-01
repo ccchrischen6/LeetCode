@@ -87,4 +87,31 @@ public class L474_Ones_and_Zeroes {
 //        }
 //        return res;
 //    }
+
+    //dp with space O(mn)
+//    public int findMaxForm(String[] strs, int m, int n) {
+//        int len = strs.length;
+//        int[][] dp = new int[m+1][n+1];
+//        for(String i : strs){
+//            int[] count = getCount(i);
+//
+//            //since we traverse from backward, we do not need another cur[][]
+//            //we update the back data using front data
+//            for(int j=m; j>=count[0]; j--){
+//                for(int k=n; k>=count[1]; k--){
+//                    dp[j][k] = Math.max(dp[j][k], 1 + dp[j-count[0]][k-count[1]]);
+//                }
+//            }
+//        }
+//        return dp[m][n];
+//    }
+//
+//    private int[] getCount(String s){
+//        int[] res = new int[2];
+//        for(int i=0; i<s.length(); i++){
+//            if(s.charAt(i) == '0') res[0]++;
+//            else res[1]++;
+//        }
+//        return res;
+//    }
 }
