@@ -6,8 +6,12 @@ public class L801_MinimumSwapsToMakeSequencesIncreasing {
         int n = A.length;
         int[] keep = new int[n];
         int[] swap = new int[n];
+
+        //it is the key
         Arrays.fill(keep, Integer.MAX_VALUE);
         Arrays.fill(swap, Integer.MAX_VALUE);
+
+        //initialize the base case
         keep[0] = 0;
         swap[0] = 1;
 
