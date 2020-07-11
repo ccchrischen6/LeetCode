@@ -5,10 +5,6 @@ public class L688_KnightProbability_in_Chessboard {
     public double knightProbability(int N, int K, int r, int c) {
         this.N = N;
         memo = new double[N][N][K+1];
-        // for(int[][] a : memo)
-        //     for(int[] b : a)
-        //         Arrays.fill(b, -1);
-
         double in = dfs(K, r, c);
 
         double total = Math.pow(8,K);
