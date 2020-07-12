@@ -50,18 +50,18 @@ public class Trail {
     }
 
     public static void main(String[] args) {
-        Trail trail = new Trail();
-        TreeNode t1 = new TreeNode(1);
-        t1.right = new TreeNode(2);
-        t1.right.left = new TreeNode(3);
-        LinkedList<Integer> stack = new LinkedList<>();
-        stack.offer(1);
-        stack.offer(2);
-        stack.push(3);
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(null);
-        System.out.println(stack.toString());
+//        Trail trail = new Trail();
+//        TreeNode t1 = new TreeNode(1);
+//        t1.right = new TreeNode(2);
+//        t1.right.left = new TreeNode(3);
+//        LinkedList<Integer> stack = new LinkedList<>();
+//        stack.offer(1);
+//        stack.offer(2);
+//        stack.push(3);
+//        List<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(null);
+        System.out.println((int)Math.pow(10,9)+7);
 
 
 
