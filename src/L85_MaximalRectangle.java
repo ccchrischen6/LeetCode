@@ -27,4 +27,52 @@ public class L85_MaximalRectangle {
         }
         return res;
     }
+
+
+    /**
+     * using stack
+     * time: O(mn)
+     * space: O(n)
+     */
+
+//    public int maximalRectangle(char[][] matrix) {
+//        if(matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) return 0;
+//
+//        int m = matrix.length;
+//        int n = matrix[0].length;
+//        int[] dp = new int[n];
+//        int res = 0;
+//        for(int i=0; i<m; i++){
+//            for(int j=0; j<n; j++){
+//                if(matrix[i][j] == '1') dp[j] += 1;
+//                else dp[j] = 0;
+//            }
+//            res = Math.max(res, lc83(dp));
+//        }
+//        return res;
+//    }
+//
+////    private int lc83(int[] nums){
+////        if(nums == null || nums.length == 0) return 0;
+////        int len = nums.length;
+////        Deque<Integer> stack = new LinkedList();
+////        stack.push(-1);
+////        int max = 0;
+////
+////        for(int i=0; i<len; i++){
+////            while(stack.peek() != -1 && nums[stack.peek()] > nums[i]){
+////                int idx = stack.pop();
+////                int h = nums[idx];
+////                max = Math.max(max, h*(i- stack.peek() - 1));
+////            }
+////            stack.push(i);
+////        }
+////
+////        while(stack.peek() != -1){
+////            int idx = stack.pop();
+////            int h = nums[idx];
+////            max = Math.max(max, h*(len- stack.peek() - 1));
+////        }
+////        return max;
+////    }
 }
