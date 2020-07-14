@@ -1,5 +1,7 @@
 public class L198_HouseRobber {
     //original dp solution
+    //time: O(n)
+    //space: O(n)
 //    public int rob(int[] nums) {
 //        int n = nums.length;
 //        if(n == 0) return 0;
@@ -18,7 +20,8 @@ public class L198_HouseRobber {
 //    }
 
 
-
+    //time : O(n)
+    //space: O(1)
     public int rob(int[] nums) {
         int n = nums.length;
         if (n == 0) return 0;
@@ -34,4 +37,37 @@ public class L198_HouseRobber {
         }
         return Math.max(wait, rob);
     }
+
+    /**
+     * memo recursive
+     * time: O(n)
+     * space: O(n)
+     */
+
+//    Map<String,Integer> memo = new HashMap();
+//    public int rob(int[] nums) {
+//        return Math.max(helper(nums, 0, true), helper(nums, 0, false));
+//    }
+//
+//    private int helper(int[] nums, int i, boolean action){
+//        if(i == nums.length) return 0;
+//        int ans = 0;
+//        String key = i+"@";
+//        if(action) {
+//            key += 0;
+//            if(memo.containsKey(key)) ans = memo.get(key);
+//            else {
+//                ans = helper(nums, i+1, false) + nums[i];
+//            }
+//        }
+//        else {
+//            key += 1;
+//            if(memo.containsKey(key)) ans = memo.get(key);
+//            else{
+//                ans = Math.max(helper(nums, i+1, false), helper(nums, i+1, true));
+//            }
+//        }
+//        memo.put(key, ans);
+//        return ans;
+//    }
 }
