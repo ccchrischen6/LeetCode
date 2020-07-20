@@ -1,5 +1,10 @@
 import java.util.*;
 
+/**
+ * recursive with memo
+ * time: O(n^2 + 2^n + W)
+ * space: O(2^n * n + n^2 + W)
+ */
 public class L140_Word_Break_II {
     Map<String,List<String>> memo = new HashMap();
     public List<String> wordBreak(String s, List<String> wordDict) {

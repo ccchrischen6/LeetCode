@@ -7,8 +7,10 @@ public class L818_RaceCar {
     //BFS with String memo
     public int racecar(int target) {
         Queue<Pair<Integer, Integer>> q = new LinkedList();
+        //pair<pos, speed>
         q.offer(new Pair(0, 1));
         Set<String> visited = new HashSet();
+        //initialize the visited set
         visited.add("0_1");
         visited.add("0_-1");
         int step = 0;
