@@ -1,71 +1,35 @@
 import java.util.*;
 
 public class Trail {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
+    private void test() {
+        int[] a = new int[]{1, 2};
+        int[] b = new int[]{1, 3};
+        int[] c = new int[]{1, 1};
+        int[][] intervals = new int[][]{a, b, c};
+        for (int[] e : intervals) {
+            System.out.println(Arrays.toString(e));
         }
 
-        TreeNode(int val) {
-            this.val = val;
+        System.out.println("-------------");
+        Collections.sort(Arrays.asList(intervals), new IntervalComparator());
+        for (int[] e : intervals) {
+            System.out.println(Arrays.toString(e));
         }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList();
-        while (root != null) {
-            res.add(root.val);
-            //case 1
-            if (root.left == null) {
-                root = root.right;
-            }
-            //case 2
-            else {
-                TreeNode pre = root.left;
-                while (pre.right != null && pre.right != root) {
-                    pre = pre.right;
-                }
-                //case 2.1
-                if (pre.right == null) {
-                    pre.right = root;
-                    root = root.left;
-                }
-                //case 2.2
-                else{
-                    pre.right = null;
-                    root = root.right;
-                }
-            }
-        }
-        return res;
     }
 
     public static void main(String[] args) {
-//        Trail trail = new Trail();
-//        TreeNode t1 = new TreeNode(1);
-//        t1.right = new TreeNode(2);
-//        t1.right.left = new TreeNode(3);
-//        LinkedList<Integer> stack = new LinkedList<>();
-//        stack.offer(1);
-//        stack.offer(2);
-//        stack.push(3);
-//        List<Integer> list = new ArrayList<>();
-//        list.add(1);
-//        list.add(null);
-        System.out.println((int)Math.pow(10,9)+7);
-
-
+        LinkedList<String> list = new LinkedList<>();
 
     }
+
+    private class IntervalComparator implements Comparator<int[]> {
+        @Override
+        public int compare(int[] a, int[] b) {
+            return Integer.compare(a[0], b[0]);
+        }
+    }
+
+
 }
 
 /*

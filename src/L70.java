@@ -1,15 +1,14 @@
 public class L70 {
-    public static int climbStairs(int n) {
-        return climb(0, n);
-    }
-
-    public static int climb(int i, int n){
-        if (i>n) return 0;
-        if (i==n) return 1;
-        return climb(i+1, n) + climb(i+2, n);
+    public int f(int n) {
+        if(n == 0) return 1;
+        if(n == 1) return 1;
+        return f(n-1) + f(n-2);
     }
 
     public static void main(String[] args) {
-        System.out.println(climbStairs(44));
+        L70 test = new L70();
+        for(int i=0; i<20; i++){
+            System.out.println("i = " + i + ", f(i) = " + test.f(i));
+        }
     }
 }
